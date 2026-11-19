@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/style.css">
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+
+<body>
+  <div class="grain-overlay" aria-hidden="true"></div>
+  <canvas id="scene"></canvas>
+  <img class="bird" src="vids/extras/bird.gif" alt="" aria-hidden="true"
+    style="--flight-y: 10vh; --flight-duration: 27s; --flight-delay: -12s">
+  <img class="bird" src="vids/extras/bird.gif" alt="" aria-hidden="true"
+    style="--flight-y: 17vh; --flight-duration: 32s; --flight-delay: -24s">
+  <img class="bird" src="vids/extras/bird.gif" alt="" aria-hidden="true"
+    style="--flight-y: 23vh; --flight-duration: 29s; --flight-delay: -5s">
+  <button id="exit" type="button" hidden>Exit</button>
+  <button id="audio-toggle" type="button" aria-label="Nature sounds" aria-pressed="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M11 5 6 9H3v6h3l5 4z"></path>
+      <g class="audio-on" hidden>
+        <path d="M15 9a5 5 0 0 1 0 6"></path>
+        <path d="M17.5 6.5a8.5 8.5 0 0 1 0 11"></path>
+      </g>
+    </svg>
+  </button>
+  <div id="hint" hidden></div>
+  <div id="stick" hidden>
+    <div id="knob"></div>
+  </div>
+  <div id="notice" hidden></div>
+  <div id="welcome-intro" class="welcome-intro" aria-live="polite">
+    <div id="welcome-backdrop" class="welcome-backdrop"></div>
+    <div id="welcome-content" class="welcome-content">
+      <img id="welcome-frame" class="welcome-frame" src="vids/extras/marco.png" alt="" aria-hidden="true">
+      <div id="welcome-text" class="welcome-text">
+        <div class="welcome-floating-motes" aria-hidden="true">
+          <span class="welcome-mote mote-1">❦</span>
+          <span class="welcome-mote mote-2">✦</span>
+          <span class="welcome-mote mote-3">❦</span>
+          <span class="welcome-mote mote-4">✧</span>
+        </div>
+        <div class="welcome-content-inner">
+          <div class="welcome-crown" aria-hidden="true">❦</div>
+          <div class="welcome-body">
+            <span class="welcome-line welcome-line-1"><span class="welcome-initial">L</span>ooks like you found</span>
+            <span class="welcome-line welcome-line-2">the key to my home.</span>
+          </div>
+          <div class="welcome-flourish-wrap" aria-hidden="true">
+            <svg class="welcome-flourish" viewBox="0 0 180 24" fill="currentColor">
+              <path
+                d="M90 17 C87.5 14.5, 83 10.5, 83 7.8 C83 5.5, 85 4, 87.5 4 C88.8 4, 89.6 4.7, 90 5.4 C90.4 4.7, 91.2 4, 92.5 4 C95 4, 97 5.5, 97 7.8 C97 10.5, 92.5 14.5, 90 17 Z" />
+              <path d="M72 12 C55 12, 42 6, 25 6 C12 6, 4 14, 12 18 C18 20, 24 16, 22 11 C20 6, 12 8, 12 10"
+                stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" />
+              <path
+                d="M108 12 C125 12, 138 6, 155 6 C168 6, 176 14, 168 18 C162 20, 156 16, 158 11 C160 6, 168 8, 168 10"
+                stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" />
+              <circle cx="5" cy="12" r="1.5" />
+              <circle cx="175" cy="12" r="1.5" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="statement" aria-live="polite"></div>
+  <script type="module" src="src/main.js"></script>
+</body>
+
+</html>
